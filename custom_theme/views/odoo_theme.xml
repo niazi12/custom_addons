@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="odoo_custom_theme" name="website asstes for oddo theme" inherit_id="website.assets_frontend">
+          <xpath expr="." position="inside">  
+                      <link rel="stylesheet" href="/custom_theme/static/css/odoo_theme.css"/>
+                      <script type="text/javascript" src="/custom_theme/static/js/odoo_theme.js"/>
+                </xpath>
+        </template>
+
+    </data>
+</odoo>

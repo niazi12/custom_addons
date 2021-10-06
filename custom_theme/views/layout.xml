@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <template id="custom_message" name="custom header"  inherit_id="website.layout">
+          <xpath expr="//div[@id='wrapwrap']/header" position="before">  
+                      <div class="container">
+                          <div class="alert alert-info mt16" role="alert">
+                            <img src="/custom_theme/static/images/nz.jpg"/>
+                            <strong> Welcome </strong> in my NZ page
+                          </div>
+                      </div>
+                </xpath>
+        </template>
+
+    </data>
+</odoo>

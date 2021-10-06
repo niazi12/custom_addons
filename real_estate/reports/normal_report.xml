@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="action_property_id_card" model="ir.actions.report">
+        <field name="name">Property ID Card</field>
+        <field name="model">real.estate</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">real_estate.report_normal</field>
+        <field name="report_file">real_estate.report_normal</field>
+        
+        <field name="binding_model_id" ref="model_real_estate"/>
+    </record>
+
+    <template id="report_normal">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h1>Property Report</h1>
+                        
+                        <h2> Property Name: <t t-esc="o.title" /> </h2>
+                        <h3> Description: <t t-esc="o.description" /> </h3>
+                        <h3> Expected price: <t t-esc="o.expected_price" /> </h3>
+                        <img t-att-src="'/report/barcode/?type=%s&amp;value=%s&amp;width=%s&amp;height=%s'%('QR', 'text', 200, 200)"/>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+</odoo>
+   
+                

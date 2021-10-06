@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    
+    <record id="menu_property_form" model="website.menu">
+        <field name="name">Create Faculty</field>
+        <field name="url">/request</field>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence">55</field>
+    </record>
+
+    <template id="create_property" name="Create Property">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                        <form role="form" action="/request/property" method="POST">
+                            <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                            <div class="form-group">
+                                <label for="name" class="control-label">Name</label>
+                                <input type="text" name="name" t-att-value="name" id="name"
+                                       class="form-control" placeholder="e.g. John Doe" required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone" class="control-label">Phone</label>
+                                <input type="text" name="phone" t-att-value="phone" id="phone"
+                                       class="form-control" required="required"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="adviser_id" class="control-label">Student List</label>
+                                <select class="form-control" name="course_list" t-att-value="course_list" id="course_list">
+                                
+                                <t t-foreach="course_list" t-as="course_list">
+                                <option t-attf-value="#{course_list.id}"><t t-esc="course_list.name"/></option>
+                                </t>
+
+                                </select>
+
+                            </div>
+                          
+                            <div class="clearfix oe_login_buttons">
+                                <button type="submit" class="btn btn-primary pull-left">Create Faculty</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </t>
+    </template>
+
+    <record id="property_thanks" model="website.page">
+        <field name="name">Thanks</field>
+        <field name="type">qweb</field>
+        <field name="url">/property_thanks</field>
+        <field name="website_published">True</field>
+        <field name="key">niazi__academy.property_thanks</field>
+        <field name="arch" type="xml">
+            <t name="Thanks" t-name="niazi__academy.property_thanks">
+                <t t-call="website.layout">
+                  <div id="wrap">
+                    <div class="container">
+                        <h1>Thanks!</h1>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <div class="alert alert-success" role="status">
+                                    The Faculty has been Created successfully.
+                                </div>
+                                <p>
+                                    Visit My room At ANy Time
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </t>
+            </t>
+        </field>
+    </record>
+
+</odoo>

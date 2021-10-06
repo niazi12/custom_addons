@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+        id="report_invoice"
+        string="Invoice"
+        model="book.hotel"
+        report_type="qweb-pdf"
+        name="hotel.report_invoice"
+        file="hotel.report_invoice"/>
+
+
+
+</odoo>

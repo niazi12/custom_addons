@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+     <!-- === Services Page === -->
+     <record id="services_page" model="website.page">
+         <field name="name">My Service</field>
+         <field name="website_published">True</field>
+         <field name="url">/services</field>
+         <field name="type">qweb</field>
+         <field name="key">theme_tutorial.services_page</field>
+         <field name="arch" type="xml">
+             <t t-name="theme_tutorial.services_page_template">
+             <t t-call="website.layout">
+             <div id="wrap">
+                <div class="oe_structure">
+                    <div class="container">
+                 <h1>Courses</h1>
+                 <ul class="services">
+                     <li>Data Science</li>
+                     <li>Algo</li>
+                     <li>Ai</li>
+                 </ul>
+                 </div>
+            </div>
+        </div>
+             </t>
+             </t>
+         </field>
+         <!-- <div class="oe_structure"/> -->
+     </record>
+     <record id="menu_service_link" model="website.menu">
+        <field name="name">Courses</field>
+        <field name="page_id" ref="services_page"/>
+        <field name="parent_id" ref="website.main_menu"/>
+        <field name="sequence" type="int">60</field>
+    </record>
+
+ </odoo>

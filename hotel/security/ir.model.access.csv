@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hotels_nearby_admin,access_near_hotel,model_near_hotel,hotel.group_hotel_admin,1,1,1,1
+access_book_hotel_admin,access_book_hotel,model_book_hotel,hotel.group_hotel_admin,1,1,1,1

@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id='hotel_tree' model='ir.ui.view'>
+        <field name='name'>near.hotel.tree</field>
+        <field name='model'>near.hotel</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name'/>
+                <field name='description'/>
+                <field name='address'/>
+                <field name='location'/>
+           
+                <field name='available_rooms'/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="hotel_form" model="ir.ui.view">
+        <field name="name">near.hotel.form</field>
+        <field name="model">near.hotel</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <button name="book_now" string="Book" type="object"  class="btn-primary"/>
+                
+                    <group string="Hotel Details">
+                        <field name='name'/>
+                        
+                        <field name='address'/>
+                        <field name='location'/>
+                        <field name='bookhotel_ids'/>
+                       
+                        <field name='available_rooms'/>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <field name='description'/>
+                        </page>
+                                                            
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+        </record>
+
+
+
+
+    </data>
+</odoo>

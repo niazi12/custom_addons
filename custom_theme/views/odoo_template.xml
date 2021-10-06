@@ -1,0 +1,11 @@
+<odoo>
+    <data>
+
+        <template id="title" name="title">
+          <h1>Title</h1>
+          <h2>Sub title</h2>
+
+        </template>
+
+    </data>
+</odoo>

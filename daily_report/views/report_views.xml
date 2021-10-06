@@ -1,0 +1,92 @@
+<odoo>
+  <data>
+
+
+    <record model="ir.ui.view" id="daily_report.list">
+      <field name="name">daily_report list</field>
+      <field name="model">daily_report.reports</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name='employee'/>
+          <field name="report_date"/>
+          <field name="in_time"/>
+          <field name="out_time"/>
+          <field name="working_hour"/>
+          <field name="mail_sent"/>
+        </tree>
+      </field>
+    </record>
+
+
+    <record id="daily_report_form" model="ir.ui.view">
+        <field name="name">daily_report.form</field>
+        <field name="model">daily_report.reports</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <group>
+                                <field name='employee'/>
+                                <field name='department'/>
+                                <field name='report_date'/>
+                                <field name='mail_sent'/>
+                                </group>
+                               
+                            </div>
+                            <div class="col-md-6">
+                                <group>
+                                <field name='in_time'/>
+                                <field name='out_time'/>
+                                <field name='working_hour'/>
+                                </group>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <group string="Activity Details">
+                                <field name='activity'/>
+                            </group>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                            <group>
+                                <field name='achievement'/>
+                                <field name='problems'/>
+                                <field name='solutions'/>
+                            </group>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                       
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="daily_report_action_window">
+      <field name="name">Daily Report</field>
+      <field name="res_model">daily_report.reports</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem name="Daily Report" id="daily_report.menu_root" web_icon="daily_report,static/description/icon.png"/>
+
+
+    <menuitem name="Daily Report" id="daily_report.menu_1_list" parent="daily_report.menu_root"
+              action="daily_report_action_window"/>
+    
+
+  </data>
+</odoo>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <record id="faculty_tree" model="ir.ui.view">
+        <field name="name">academy.faculty.tree</field>
+        <field name="model">academy.faculty</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                
+                <field name="phone"/>
+                <field name="course_name"/>
+                <field name="note"/>
+                <field name="students_list_ids"/>
+                <field name="course_list"/>
+                
+                
+            </tree>
+        </field>
+    </record>
+
+    <record id="faculty_form_here" model="ir.ui.view">
+        <field name="name">academy.faculty.form</field>
+        <field name="model">academy.faculty</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="last_name" attrs="{'invisible': [('include_last_name','=',False)] }"/>
+                            <field name="include_last_name"/>
+                            <field name="phone"/>
+                            <field name="course_list"/>
+                        </group>
+                        <group>
+                            <field name="course_name"/>
+                            <field name="note"/>
+                            <field name="students_list_ids"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    
+    <record id="faculty_action" model="ir.actions.act_window">
+        <field name="name">Faculty</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.faculty</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Faculty List
+            </p>
+        </field>
+    </record>
+
+    <record id="faculty_search" model="ir.ui.view">
+        <field name="name">academy.faculty.search</field>
+        <field name="model">academy.faculty</field>
+        <field name="arch" type="xml">
+            <search string="Students">
+                <field name="name"/>
+               
+                <field name="phone"/>
+                <field name="course_name"/>
+                
+                
+                
+               
+                
+            </search>
+            </field>
+    </record>
+    
+    
+    <menuitem id="academy_root"
+            name="Niazi_Academy"
+            
+            sequence="10"/>
+
+    
+
+    <menuitem id="academy_faculty"
+        name="Faculty"
+        parent="academy_root"
+        action="faculty_action"
+        sequence="10"/>
+
+
+
+</odoo>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='view_contact_tree' model='ir.ui.view'>
+        <field name='name'>contact.info.tree</field>
+        <field name='model'>contact.info</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name'/>
+                <field name='phone_number' />
+                <field name='address'/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id='view_contact_form' model='ir.ui.view'>
+        <field name='name'>contact.info.form</field>
+        <field name='model'>contact.info</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='phone_number' />
+                        <field name='address'/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- <record id='view_contact_search' model='ir.ui.view'>
+        <field name='name'>contact.info.form</field>
+        <field name='model'>contact.info</field>
+        <field name='arch' type='xml'>
+            <search>
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='phone_number' />
+                        <field name='address'/>
+                    </group>
+                </sheet>
+            </search>
+        </field>
+    </record> -->
+
+    <record id='action_test' model='ir.actions.act_window'>
+        <field name='name'>Contacts</field>
+        <field name='res_model'>contact.info</field>
+        <field name='view_mode'>tree,form</field>
+    </record>
+
+    <menuitem 
+        id='menu_test'
+        action='action_test'
+        name='Contact information'/>
+</odoo>

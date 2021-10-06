@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+ 
+    <record id='view_wizard_form' model='ir.ui.view'>
+        <field name='name'>realestate.wizard.form</field>
+        <field name='model'>realestate.wizard</field>
+        <field name='arch' type='xml'>
+            <!-- <form string="Print Coffee Items"> -->
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name='name'/>
+                            
+                       
+   
+                        </group>
+                        <group>
+                            <field name='description'/>
+                            <field name='expected'/>
+                        
+                        </group>
+
+                    </group>
+                    <footer>
+                    <button name="print_report" string="Print" class="btn-primary" type="object"/>
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+  
+  
+    <record id="report_action" model="ir.actions.act_window">
+        <field name="name">Create Card</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">realestate.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_wizard_form"/>
+        <field name="target">new</field>
+    </record>
+    
+ 
+
+
+</odoo> 

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+<template id="s2_testimonial" name="snippet2">
+    <section class="s2_testimonial">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-4 text-center" style = "color: #5c3c35;">
+                    <img alt="client" class="rounded-circle" src="/custom_theme/static/images/icon.png"/>
+                    <h3>Bjit</h3>
+                    
+                </div>
+                <div class="col-lg-4 text-center" style = "color: #5c3c35;">
+                    <img alt="client" class="rounded-circle" src="/custom_theme/static/images/newscred.png"/>
+                    <h3>NewsCred</h3>
+                    
+                </div>
+
+                <div class="col-lg-4 text-center" style = "color: #5c3c35;">
+                    <img alt="client" class="rounded-circle" src="/custom_theme/static/images/index.png"/>
+                    <h3>Cefalo</h3>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
+
+<template id="place_into_bar1" inherit_id="website.snippets" name="Place into bar1">
+    <xpath expr="//div[@id='snippet_structure']/div[hasclass('o_panel_body')]" position="inside">
+        <t t-snippet="custom_theme.s2_testimonial"
+                t-thumbnail="/custom_theme/static/images/bj.png"/>
+    </xpath>
+</template>
+</odoo>

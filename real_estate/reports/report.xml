@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  
+
+
+    <report
+        id="report_real_estate"
+        string="Property Card"
+        model= "real.estate"
+        report_type="qweb-pdf"
+        name="real_estate.property_report"
+        file="real_estate.property_report">
+    </report>
+
+    <!-- <report
+    id="report_real_estate_inherit"
+    string="Real Estate Inherit Report"
+    model= "real.estate"
+    report_type="qweb-pdf"
+    name="real_estate.property_report_inherit"
+    file="real_estate.property_report_inherit"/> -->
+ 
+
+</odoo>

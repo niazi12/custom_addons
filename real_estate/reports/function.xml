@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="property_report_card">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <h1> Property Report </h1>
+                <h3> Property Name: <t t-esc="doc.title" /> </h3>
+                <h3> Description: <t t-esc="doc.description" /> </h3>
+                <h3> Expected price: <t t-esc="doc.expected_price" /> </h3>
+                
+            </t>
+
+            <t t-foreach="buyer_lists" t-as="buyer">
+                <p><t t-esc="buyer['name']"/></p>
+            </t>
+        </t>
+        
+    </template>
+
+    
+
+
+    <template id="property_report">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="real_estate.property_report_card"/>    
+            </t>
+        </t>
+    </template>
+
+</odoo>

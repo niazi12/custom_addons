@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id='view_admin_tree' model='ir.ui.view'>
+        <field name='name'>academy.admin.tree</field>
+        <field name='model'>academy.admin</field>
+        <field name='arch' type='xml'>
+            <tree>
+                <field name='name'/>
+                <field name='id'/>
+                
+
+            </tree>
+        </field>
+    </record>
+    <record id='view_admin_form' model='ir.ui.view'>
+        <field name='name'>academy.admin.form</field>
+        <field name='model'>academy.admin</field>
+        <field name='arch' type='xml'>
+            <form>
+                <sheet>
+                    <group>
+                        <field name='name'/>
+                        <field name='id'/>
+                        
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="admin_action" model="ir.actions.act_window">
+        <field name="name">Admin</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">academy.admin</field>
+        <field name="view_mode">tree,form</field>
+        
+    </record>
+
+    <record id="admin_search" model="ir.ui.view">
+        <field name="name">academy.admin.search</field>
+        <field name="model">academy.admin</field>
+        <field name="arch" type="xml">
+            <search string="Courses">
+                <field name="name"/>
+                <field name="id"/>  
+            </search>
+        </field>
+    </record>
+    <menuitem id="academy_root"
+            name="Niazi_Academy"
+           
+            sequence="10"/>
+
+
+
+    <menuitem id="academy_admin"
+        name="Admin"
+        parent="academy_root"
+        action="admin_action"
+        sequence="10"/>
+
+
+
+
+</odoo>
