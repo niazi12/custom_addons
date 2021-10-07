@@ -28,7 +28,19 @@
         action='action_hotel_book' 
         name='Book Hotel'
         parent='hotel_menu'
-        sequence='2'/>    
+        sequence='2'/> 
+    <record id='action_hotel_api' model='ir.actions.act_window'>
+            <field name='name'>Hotel api</field>
+            <field name='res_model'>hotels.api</field>
+            <field name='view_mode'>tree,form</field>
+    </record>
+
+    <menuitem
+            id='menu_hotel_api'
+            action='action_hotel_api'
+            name='Api Hotel'
+            parent='hotel_menu'
+            sequence='3'/>   
 
 
 

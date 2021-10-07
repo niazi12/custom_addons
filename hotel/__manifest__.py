@@ -29,6 +29,7 @@
         'views/views.xml',
         'views/nearhotel.xml',
         'views/hotelbook.xml',
+        'views/api.xml',
         'reports/report.xml',
         'reports/booking_invoice_views.xml',
     ],
