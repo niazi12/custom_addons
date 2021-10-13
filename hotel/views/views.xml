@@ -7,7 +7,7 @@
     <record id='action_near_hotel' model='ir.actions.act_window'>
         <field name='name'>Nearby Hotel</field>
         <field name='res_model'>near.hotel</field>
-        <field name='view_mode'>tree,form</field>
+        <field name='view_mode'>tree,form,kanban</field>
     </record>
 
     <menuitem 
@@ -41,9 +41,7 @@
             name='Api Hotel'
             parent='hotel_menu'
             sequence='3'/>   
-
-
-
+    
 
   </data>
 </odoo>

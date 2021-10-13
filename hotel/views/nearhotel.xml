@@ -9,6 +9,7 @@
                 <field name='description'/>
                 <field name='address'/>
                 <field name='location'/>
+                <field name='hotel_type'/>
            
                 <field name='available_rooms'/>
             </tree>
@@ -29,7 +30,7 @@
                         <field name='address'/>
                         <field name='location'/>
                         <field name='bookhotel_ids'/>
-                       
+                        <field name='hotel_type'/>
                         <field name='available_rooms'/>
                     </group>
                     <notebook>
@@ -42,6 +43,45 @@
             </form>
         </field>
         </record>
+        <record id="hotel_kanban" model="ir.ui.view">
+        <field name="name">near.hotel.kanban</field>
+        <field name="model">near.hotel</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="hotel_type">
+                <field name='name'/>
+                <field name='description'/>
+                <field name='address'/>
+                <field name='location'/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h1 class="o_kanban_record_title"><field name="name"/></h1>
+                                <ul>
+                                    <li>Description : <field name='description'/></li>
+                                    <li>Address : <field name='address'/></li>
+                                    <li>Location : <field name='location'/></li>
+                                
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+        </record>
+
+
+
+        <!-- <record id="action_hotel_confirm" model="ir.actions.server">
+            <field name="name">Single</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_near_hotel"/>
+            <field name="binding_model_id" ref="model_near_hotel"/>
+            <field name="binding_view_types">list,form</field>
+            <field name="state">code</field>
+            <field name="code">records.action_hotel_confirm()</field>
+        </record> -->
 
 
 

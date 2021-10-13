@@ -16,7 +16,15 @@ class NearHotel(models.Model):
 
     available_rooms = fields.Integer(string="Available Rooms")
     bookhotel_ids = fields.One2many('book.hotel','hotel',string='Book Hotel',index=True)
-    
+    hotel_type = fields.Selection([
+      
+        ('single', 'Single'),
+        ('double', 'Double')
+    ], string='Room Type')
+
+    def action_hotel_confirm(self):
+        self.hotel_type = 'single'
+        
     def book_now(self):
         return{
             'res_model': 'book.hotel',
