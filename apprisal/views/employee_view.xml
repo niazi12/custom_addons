@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="create_employee_tree" model="ir.ui.view">
+        <field name="name">apprisal.employee.tree</field>
+        <field name="model">apprisal.employee</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="employeeID"/>
+                <field name="age"/>
+                <field name="address"/>
+                <field name="designation"/>
+                <field name="phone"/>
+                <field name="email"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_employee_form" model="ir.ui.view">
+        <field name="name">apprisal.employee.form</field>
+        <field name="model">apprisal.employee</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group string = 'Personal Information'>
+                            <field name="name"/>
+                            <field name="gender"/>
+                            <field name="image" widget='image' class='oe_avatar'/>
+                            <field name="phone"/>
+                            <field name="age"/>
+                            <field name="address"/>
+                        </group>
+                        <group string = 'Work information'>
+                            <field name="employeeID"/>
+                            <field name="email"/>
+                            <field name="designation"/>
+                            <field name="work_phone"/>
+                            <field name="joined_from"/>
+                            <field name="work_hour_day"/>
+                            <field name="total_week"/>
+                            <field name="total_month_hours"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="About">
+                            <field name='about'/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="create_employee_search" model="ir.ui.view">
+        <field name="name">apprisal.employee.search</field>
+        <field name="model">apprisal.employee</field>
+        <field name="arch" type="xml">
+            <search string="Doctor">
+                <field name="name"/>
+                <field name="email"/>
+                <field name="gender"/>
+                <field name="phone"/>
+                <field name="age"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="employee_action" model="ir.actions.act_window">
+        <field name="name">Doctors</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">apprisal.employee</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Employee List
+            </p>
+        </field>
+    </record>
+   
+
+</odoo>
