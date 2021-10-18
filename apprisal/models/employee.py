@@ -20,6 +20,14 @@ class CreateEmployee(models.Model):
     employeeID = fields.Integer(string='Employee ID', required=True)
     work_phone = fields.Integer(string='Work Phone')
     joined_from = fields.Date(string='Joined Date')
+    marital_status = fields.Selection([
+        ('single','Single'),
+        ('married', 'Married')
+    ], string='Marital status')
+    status = fields.Selection([
+        ('fulltime', 'Full time'),
+        ('parttime', 'Part time')
+    ],string='Job type', required=True, default='fulltime')
     designation = fields.Selection([     
         ('hr', 'Hr'),
         ('admin', 'Admin'),
@@ -31,6 +39,10 @@ class CreateEmployee(models.Model):
         ('others', 'Others'),
     ], string='Deapartment', required = True)
     work_hour_day = fields.Integer(string='Working hours(day)')
+    nationality = fields.Char(string='Nationality')
+    identification = fields.Integer(string='Identification No')
+    passport = fields.Char(string='Passport No')
+    place_of_birth = fields.Char(string='Place of birth')
 
     total_week = fields.Float(String = 'Working hours(week)', compute="_compute_total")
     total_month_hours = fields.Float(String = 'Working hours(months)', compute="_compute_total")

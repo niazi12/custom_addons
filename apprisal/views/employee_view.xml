@@ -32,16 +32,25 @@
                             <field name="phone"/>
                             <field name="age"/>
                             <field name="address"/>
+                            <field name="marital_status"/>
                         </group>
                         <group string = 'Work information'>
                             <field name="employeeID"/>
                             <field name="email"/>
                             <field name="designation"/>
+                            <field name="status"/>
                             <field name="work_phone"/>
                             <field name="joined_from"/>
                             <field name="work_hour_day"/>
                             <field name="total_week"/>
                             <field name="total_month_hours"/>
+                        </group>
+                        <group string = 'Citizenship'>
+                            <field name="nationality"/>
+                            <field name="identification"/>
+                            <field name="passport"/>
+                            <field name="place_of_birth"/>
+                            
                         </group>
                     </group>
                     <notebook>
