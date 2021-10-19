@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "apprisal",
+    'name': "Apprisal",
 
     'summary': """
         Short (1 phrase/line) summary of the module's purpose, used as
@@ -27,6 +27,7 @@
         # 'security/ir.model.access.csv',
         'views/employee_view.xml',
         'views/menus.xml',
+        'views/apprisal_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

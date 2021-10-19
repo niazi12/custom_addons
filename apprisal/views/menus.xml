@@ -20,6 +20,23 @@
               id="menu_employee"
               parent="menu_hr_appraisal_root"
               action="employee_action"/>
+    
+    <record id="apprisal_action" model="ir.actions.act_window">
+        <field name="name">Apprisal</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.appraisal</field>
+        <field name="view_mode">form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Apprisal
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Apprisal"
+              id="menu_apprisal"
+              parent="menu_hr_appraisal_root"
+              action="apprisal_action"/>
 
 
 </odoo>
