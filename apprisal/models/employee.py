@@ -11,7 +11,7 @@ class CreateEmployee(models.Model):
         ('male','Male'),
         ('female', 'Female')
     ], string='Gender')
-    email = fields.Char(string='Email')
+    email = fields.Char(string='Email', required=True)
     phone = fields.Integer(string='Mobile')
     address = fields.Char(string='Address')
     about = fields.Text(string='About')
@@ -52,7 +52,7 @@ class CreateEmployee(models.Model):
         for record in self:
             record.total_week = record.work_hour_day * 5
             record.total_month_hours = record.work_hour_day * 20
-    
+        
     @api.constrains('email')
     def _check_email(self):
         for record in self:
