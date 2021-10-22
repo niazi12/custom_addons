@@ -25,7 +25,7 @@
         <field name="name">Apprisal</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">create.appraisal</field>
-        <field name="view_mode">form</field>
+        <field name="view_mode">tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create Apprisal
@@ -37,6 +37,23 @@
               id="menu_apprisal"
               parent="menu_hr_appraisal_root"
               action="apprisal_action"/>
+    
+    <record id="goals_action" model="ir.actions.act_window">
+        <field name="name">Goals</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">goals.appraisal</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Goals
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Goals"
+              id="menu_goal"
+              parent="menu_hr_appraisal_root"
+              action="goals_action"/>
 
 
 </odoo>

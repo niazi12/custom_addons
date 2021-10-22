@@ -7,6 +7,7 @@ class CreateEmployee(models.Model):
     _description = 'Create employee'
 
     name = fields.Char(string='Name', required=True)
+    user_id =  fields.Many2one('res.users', string="User ID")
     gender = fields.Selection([
         ('male','Male'),
         ('female', 'Female')

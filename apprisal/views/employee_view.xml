@@ -33,6 +33,7 @@
                             <field name="age"/>
                             <field name="address"/>
                             <field name="marital_status"/>
+                            <field name="user_id"/>
                         </group>
                         <group string = 'Work information'>
                             <field name="employeeID"/>

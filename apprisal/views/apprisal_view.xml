@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-    <record id="create_employee_tree" model="ir.ui.view">
-        <field name="name">apprisal.employee.tree</field>
-        <field name="model">apprisal.employee</field>
+    <record id="create_apprisal_tree" model="ir.ui.view">
+        <field name="name">create.appraisal.tree</field>
+        <field name="model">create.appraisal</field>
         <field name="arch" type="xml">
             <tree>
-                <field name="name"/>
+                <field name="name"/> 
                 <field name="gender"/>
-                <field name="employeeID"/>
-                <field name="age"/>
-                <field name="address"/>
+                <field name="employeeID"/> 
                 <field name="designation"/>
-                <field name="phone"/>
-                <field name="email"/>
+                <field name="apprisal_deadline"/> 
 
             </tree>
         </field>
