@@ -28,6 +28,8 @@
         'views/employee_view.xml',
         'views/menus.xml',
         'views/apprisal_view.xml',
+        'views/reporting_view.xml',
+        'views/goals_view.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

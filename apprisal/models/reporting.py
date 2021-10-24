@@ -1,16 +1,15 @@
 from odoo import models, fields, api
 
 
-class CreateApprisal(models.Model):
-    _name = 'create.appraisal'
-    _description = 'Appraisal'
+class CreateReporting(models.Model):
+    _name = 'create.report'
+    _description = 'Reporting'
 
     name =  fields.Many2one('apprisal.employee', string="Employee", required=True)
     gender = fields.Selection([
         ('male', 'Male'),
         ('female', 'Female')
     ], related='name.gender')
-    apprisal_deadline = fields.Datetime(string='Apprisal Deadline ', default=fields.datetime.now())
     employeeID = fields.Integer(string='Employee ID', required=True, related='name.employeeID')
     designation = fields.Selection([     
         ('hr', 'Hr'),
@@ -22,6 +21,3 @@ class CreateApprisal(models.Model):
         ('security', 'Security Guard'),
         ('others', 'Others'),
     ], string='Deapartment', related='name.designation')
-    manager =  fields.Many2one('apprisal.employee', string="Manager", required=True)
-    manager_feedback = fields.Text(string='Manager Feedback')
-    employee_feedback = fields.Text(string='Employee Feedback')

@@ -58,6 +58,9 @@
                         <page string="About">
                             <field name='about'/>
                         </page>
+                        <page string="Appraisal List">
+                            <field name='view_appraisal_ids'/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

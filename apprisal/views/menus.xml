@@ -54,6 +54,23 @@
               id="menu_goal"
               parent="menu_hr_appraisal_root"
               action="goals_action"/>
+    
+    <record id="reporting_action" model="ir.actions.act_window">
+        <field name="name">Reporting</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.report</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create reporting
+            </p>
+        </field>
+    </record>
+
+    <menuitem name="Reporting"
+              id="menu_report"
+              parent="menu_hr_appraisal_root"
+              action="reporting_action"/>
 
 
 </odoo>

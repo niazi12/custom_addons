@@ -44,6 +44,8 @@ class CreateEmployee(models.Model):
     identification = fields.Integer(string='Identification No')
     passport = fields.Char(string='Passport No')
     place_of_birth = fields.Char(string='Place of birth')
+    view_appraisal_ids = fields.One2many('create.appraisal', 'name', string="Appraisals",
+                                           readonly=True)
 
     total_week = fields.Float(String = 'Working hours(week)', compute="_compute_total")
     total_month_hours = fields.Float(String = 'Working hours(months)', compute="_compute_total")

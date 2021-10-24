@@ -10,6 +10,7 @@
                 <field name="employeeID"/> 
                 <field name="designation"/>
                 <field name="apprisal_deadline"/> 
+                <field name="manager"/>
 
             </tree>
         </field>
@@ -25,17 +26,25 @@
                         <group>
                             <field name="name"/> 
                             <field name="gender"/>
-                            <field name="employeeID"/> 
+                            <field name="employeeID"/>                                                      
+                        </group>   
+                        <group>
                             <field name="designation"/>
-                            <field name="apprisal_deadline"/>                          
-                        </group>                        
-                    </group>                    
+                            <field name="apprisal_deadline"/> 
+                            <field name="manager"/>                         
+                        </group>                      
+                    </group> 
+                    <notebook>
+                        <page string="Employee Feedback">
+                            <field name='employee_feedback'/>
+                        </page>
+                        <page string="Manager Feedback">
+                            <field name='manager_feedback'/>
+                        </page>
+                    </notebook>                   
                 </sheet>
             </form>
         </field>
     </record>
-
-    
-   
 
 </odoo>
