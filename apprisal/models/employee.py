@@ -1,6 +1,13 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
-import re    
+import re  
+
+AVAILABLE_PRIORITIES = [
+    ('0', 'Normal'),
+    ('1', 'Good'),
+    ('2', 'Very Good'),
+    ('3', 'Excellent')
+]
 
 class CreateEmployee(models.Model):
     _name = 'apprisal.employee'
@@ -52,7 +59,13 @@ class CreateEmployee(models.Model):
                                            readonly=True)
     total_week = fields.Float(String = 'Working hours(week)', compute="_compute_total")
     total_month_hours = fields.Float(String = 'Working hours(months)', compute="_compute_total")
- 
+    priority = fields.Selection(AVAILABLE_PRIORITIES, "Priority", default='0')
+
+    def approve_parttime(self):
+        
+        
+        self.status = 'parttime'
+        
     @api.depends("work_hour_day")
     def _compute_total(self):
         for record in self:

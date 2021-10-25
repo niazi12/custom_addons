@@ -21,8 +21,11 @@ class HospitalAppointment(models.Model):
     ], default='draft', required=True)
     meeting_date = fields.Datetime(string='Meeting start', default=fields.datetime.now())
     meeting_finish = fields.Datetime(string='Meeting end', required=True)
+
     @api.constrains('meeting_date', 'meeting_finish')
     def _check_date_validation(self):
         for record in self:
             if record.meeting_finish  < record.meeting_date:
                 raise ValidationError('Put a valid date and time.')
+    
+    member_ids = fields.Many2many('apprisal.employee', string="Member invited")

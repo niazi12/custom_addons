@@ -10,10 +10,20 @@
             </p>
         </field>
     </record>
+
+    <!-- <record id="employee_server" model="ir.actions.server">
+        <field name="name">Part time</field>
+        <field name="type">ir.actions.server</field>
+        <field name="model_id" ref="model_apprisal_employee"/>
+        <field name="binding_model_id" ref="model_apprisal_employee"/>
+        <field name="state">code</field>
+        <field name="code">record.approve_parttime()</field>
+    </record> -->
    
 
     <menuitem name="Appraisal"
-              id="menu_hr_appraisal_root"/>
+              id="menu_hr_appraisal_root"
+              web_icon="apprisal,static/description/icon.png"/>
 
     <menuitem name="Employees"
               id="menu_employee"

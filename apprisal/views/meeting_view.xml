@@ -26,6 +26,7 @@
                             <field name="name"/> 
                             <field name="meeting_type"/>
                             <field name="state"/> 
+                            
                                                                                  
                         </group>   
                         <group>
@@ -34,6 +35,12 @@
                                                                                
                         </group>                      
                     </group> 
+                    <notebook>
+                        <page string="Member invited">
+                            <field name="member_ids"/> 
+                        </page>
+                       
+                    </notebook>
                                     
                 </sheet>
             </form>
