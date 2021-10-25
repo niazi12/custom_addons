@@ -26,7 +26,8 @@
                         <group>
                             <field name="name"/> 
                             <field name="gender"/>
-                            <field name="employeeID"/>                                                      
+                            <field name="employeeID"/> 
+                            <field name="status"/>                                                      
                         </group>   
                         <group>
                             <field name="designation"/>
@@ -44,6 +45,67 @@
                     </notebook>                   
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record id="create_appraisal_search" model="ir.ui.view">
+        <field name="name">create.appraisal.search</field>
+        <field name="model">create.appraisal</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/> 
+                <field name="gender"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="appraisal_view_create_kanban" model="ir.ui.view">
+        <field name="name">create.appraisal.kanban</field>
+        <field name="model">create.appraisal</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="status">
+                <field name="name"/>
+                <field name="gender"/>
+                <field name="employeeID"/>
+                <field name="designation"/>
+                <field name="status"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="o_dropdown_kanban dropdown">
+                            <a class="dropdown-toggle btn" data-toggle="dropdown" href="#" >
+                                <span class="fa fa-bars fa-lg"/>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dLabel">
+                                <t t-if="widget.editable"><li><a type="edit">Edit</a></li></t>
+                                <t t-if="widget.deletable"><li><a type="delete">Delete</a></li></t>
+                                
+                            </ul>
+                        </div>
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h1 class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </h1>
+                                <ul>
+                                    <li>Gender :
+                                        <field name="gender"/>
+                                    </li>
+                                    <li>Employee ID :
+                                        <field name="employeeID"/>
+                                    </li>                                   
+                                    <li>Designation :
+                                        <field name="designation"/>
+                                    </li>
+                                    <li>Status :
+                                        <field name="status"/>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
         </field>
     </record>
 

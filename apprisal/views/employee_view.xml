@@ -61,6 +61,12 @@
                         <page string="Appraisal List">
                             <field name='view_appraisal_ids'/>
                         </page>
+                        <page string="Goals">
+                            <field name='view_goals_ids'/>
+                        </page>
+                        <page string="Meetings">
+                            <field name='view_meetings_ids'/>
+                        </page>
                     </notebook>
                 </sheet>
             </form>

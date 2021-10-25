@@ -46,7 +46,10 @@ class CreateEmployee(models.Model):
     place_of_birth = fields.Char(string='Place of birth')
     view_appraisal_ids = fields.One2many('create.appraisal', 'name', string="Appraisals",
                                            readonly=True)
-
+    view_goals_ids = fields.One2many('goals.appraisal', 'challanged_by', string="Goals",
+                                           readonly=True)
+    view_meetings_ids = fields.One2many('create.meetings', 'name', string="Meetings",
+                                           readonly=True)
     total_week = fields.Float(String = 'Working hours(week)', compute="_compute_total")
     total_month_hours = fields.Float(String = 'Working hours(months)', compute="_compute_total")
  

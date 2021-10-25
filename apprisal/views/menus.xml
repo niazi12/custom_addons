@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <odoo>   
     <record id="employee_action" model="ir.actions.act_window">
         <field name="name">Employees</field>
@@ -25,7 +24,7 @@
         <field name="name">Apprisal</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">create.appraisal</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">tree,form,kanban</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create Apprisal
@@ -35,9 +34,30 @@
 
     <menuitem name="Apprisal"
               id="menu_apprisal"
-              parent="menu_hr_appraisal_root"
-              action="apprisal_action"/>
+              parent="menu_hr_appraisal_root"/>
     
+    <menuitem name="Create Apprisal"
+              id="menu_apprisal_root"
+              parent="menu_apprisal"
+              action="apprisal_action"/>
+
+    <record id="meeting_action" model="ir.actions.act_window">
+        <field name="name">Create meeting</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.meetings</field>
+        <field name="view_mode">tree,form,kanban,calendar,gantt</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create meeting
+            </p>
+        </field>
+    </record>
+    
+    <menuitem name="Create Meeting"
+              id="menu_meeting"
+              parent="menu_apprisal"
+              action="meeting_action"/>
+
     <record id="goals_action" model="ir.actions.act_window">
         <field name="name">Goals</field>
         <field name="type">ir.actions.act_window</field>

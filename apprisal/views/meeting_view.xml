@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="create_meeting_tree" model="ir.ui.view">
+        <field name="name">create.meetings.tree</field>
+        <field name="model">create.meetings</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/> 
+                <field name="meeting_type"/>
+                <field name="state"/> 
+                <field name="meeting_date"/>
+                <field name="meeting_finish"/>
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_meeting_view_form" model="ir.ui.view">
+        <field name="name">create.meetings.form</field>
+        <field name="model">create.meetings</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/> 
+                            <field name="meeting_type"/>
+                            <field name="state"/> 
+                                                                                 
+                        </group>   
+                        <group>
+                            <field name="meeting_date"/>
+                            <field name="meeting_finish"/>
+                                                                               
+                        </group>                      
+                    </group> 
+                                    
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="meeting_view_create_kanban" model="ir.ui.view">
+        <field name="name">create.meetings.kanban</field>
+        <field name="model">create.meetings</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state">
+                <field name="name"/>
+                <field name="meeting_type"/>
+                <field name="meeting_date"/>
+                <field name="meeting_finish"/>
+                <field name="state"/> 
+                <templates>
+                    <t t-name="kanban-box">
+                        
+                        <div class="oe_kanban_global_click">
+                            <div class="oe_kanban_details">
+                                <h1 class="o_kanban_record_title">
+                                    <field name="name"/>
+                                </h1>
+                                <ul>
+                                    <li>Meeting Type :
+                                        <field name="meeting_type"/>
+                                    </li>
+                                    <li>Meeting Start  :
+                                        <field name="meeting_date"/>
+                                    </li>                                   
+                                    <li>Meeting Finish :
+                                        <field name="meeting_finish"/>
+                                    </li>
+                                    <li>State :
+                                        <field name="state"/>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="meeting_view_calendar" model="ir.ui.view">
+        <field name="name">create.meetings.calendar</field>
+        <field name="model">create.meetings</field>
+        <field name="arch" type="xml">
+            <calendar string="Meetings" date_start="meeting_date" date_stop="meeting_finish"
+                      event_open_popup="true" mode="month" color="name" quick_add="False">
+                <field name="name"/>
+                <field name="meeting_type"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record id="meeting_view_gantt" model="ir.ui.view">
+        <field name="name">create.meetings.gantt</field>
+        <field name="model">create.meetings</field>
+        <field name="arch" type="xml">
+            <gantt
+                edit="0"
+                create="0"
+                color="name"
+                date_start="meeting_date"
+                date_stop="meeting_finish"
+                default_group_by='state'
+                sample="1">
+            </gantt>
+        </field>
+    </record>
+
+</odoo>
