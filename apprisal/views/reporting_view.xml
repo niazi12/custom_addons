@@ -30,7 +30,17 @@
                             <field name="employeeID"/> 
                             <field name="designation"/>
                                                                                
-                        </group>                      
+                        </group> 
+                        <group>
+                            <field name='in_time'/>
+                            <field name='out_time'/>
+                            <field name='working_hour'/>
+                        
+                            <field name='achievement'/>
+                            <field name='problems'/>
+                            <field name='solutions'/>
+                        </group>
+                                               
                     </group> 
                                     
                 </sheet>

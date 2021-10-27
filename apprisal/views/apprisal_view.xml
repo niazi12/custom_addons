@@ -23,16 +23,25 @@
             <form>
                 <sheet>
                     <group>
-                        <group>
+                        <group string="Section I">
                             <field name="name"/> 
                             <field name="gender"/>
                             <field name="employeeID"/> 
-                            <field name="status"/>                                                      
+                            <field name="status"/>    
+                            <field name="user_id"/>  
+                            <field name="stage_update"/>                                                 
                         </group>   
                         <group>
                             <field name="designation"/>
                             <field name="apprisal_deadline"/> 
-                            <field name="manager"/>                         
+                            <field name="manager"/> 
+                            <field name="priority" widget="priority"/>                       
+                        </group> 
+                        <group string="Section II">
+                            <field name="responsibiliy"/> 
+                            <field name="employee_responsibiliy"/>
+                            <field name="accomplishmnet"/> 
+                            <field name="manager_rating" class="pr-3" widget="selection_badge"/>                                                      
                         </group>                      
                     </group> 
                     <notebook>
@@ -63,12 +72,13 @@
         <field name="name">create.appraisal.kanban</field>
         <field name="model">create.appraisal</field>
         <field name="arch" type="xml">
-            <kanban default_group_by="status">
+            <kanban default_group_by="stage_update">
                 <field name="name"/>
                 <field name="gender"/>
                 <field name="employeeID"/>
                 <field name="designation"/>
-                <field name="status"/>
+                
+                 <progressbar field="stage_update" colors='{"available": "success", "unavailable": "danger"}'/>
                 <templates>
                     <t t-name="kanban-box">
                         <div class="o_dropdown_kanban dropdown">
@@ -96,10 +106,7 @@
                                     <li>Designation :
                                         <field name="designation"/>
                                     </li>
-                                    <li>Status :
-                                        <field name="status"/>
-                                    </li>
-                                    
+                                   
                                 </ul>
                             </div>
                         </div>

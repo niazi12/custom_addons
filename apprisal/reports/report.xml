@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    
+
+         <report
+        id="menu_report_applicants"
+        string="Applicant Report"
+        model="create.appraisal"
+        report_type="qweb-pdf"
+        name="apprisal.report_appraisal"
+        file="apprisal.report_appraisal"
+        />
+
+        <!-- <report
+        id="menu_report_members_wizard"
+        string="Member Report Wizard"
+        model="lms.members"
+        report_type="qweb-pdf"
+        name="lms.report_members_wizard"
+        file="lms.report_members_wizard"
+        />
+
+          <report
+        id="menu_report_members_xlsx"
+        string="Member Report Xlsx"
+        model="lms.members"
+        report_type="xlsx"
+        name="lms.report_members_xlsx"
+        file="lms.report_members_xlsx"
+        /> -->
+
+
+</odoo>

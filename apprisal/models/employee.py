@@ -2,16 +2,14 @@ from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 import re  
 
-AVAILABLE_PRIORITIES = [
-    ('0', 'Normal'),
-    ('1', 'Good'),
-    ('2', 'Very Good'),
-    ('3', 'Excellent')
-]
+
 
 class CreateEmployee(models.Model):
     _name = 'apprisal.employee'
     _description = 'Create employee'
+
+    def approve_parttime(self):       
+        self.status = 'parttime'
 
     name = fields.Char(string='Name', required=True)
     user_id =  fields.Many2one('res.users', string="User ID")
@@ -32,6 +30,7 @@ class CreateEmployee(models.Model):
         ('single','Single'),
         ('married', 'Married')
     ], string='Marital status')
+    
     status = fields.Selection([
         ('fulltime', 'Full time'),
         ('parttime', 'Part time')
@@ -57,14 +56,11 @@ class CreateEmployee(models.Model):
                                            readonly=True)
     view_meetings_ids = fields.One2many('create.meetings', 'name', string="Meetings",
                                            readonly=True)
+    view_reporting_ids = fields.One2many('create.report', 'name', string="Meetings",
+                                           readonly=True)
     total_week = fields.Float(String = 'Working hours(week)', compute="_compute_total")
     total_month_hours = fields.Float(String = 'Working hours(months)', compute="_compute_total")
-    priority = fields.Selection(AVAILABLE_PRIORITIES, "Priority", default='0')
-
-    def approve_parttime(self):
-        
-        
-        self.status = 'parttime'
+   
         
     @api.depends("work_hour_day")
     def _compute_total(self):
@@ -93,7 +89,13 @@ class CreateEmployee(models.Model):
             if record.phone < 0:
                 raise ValidationError('Phone must be greater than 0')
 
-    
+    @api.constrains('name', 'phone')
+    def _check_employee_exists(self):
+        for record in self:
+            patient = self.env['apprisal.employee'].search(
+                [('name', '=', record.name), ('phone', '=', record.phone), ('id', '!=', record.id)])
+            if patient:
+                raise ValidationError(f'Employee {record.name} already exists')
     
     
     

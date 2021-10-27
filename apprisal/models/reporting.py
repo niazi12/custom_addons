@@ -21,3 +21,20 @@ class CreateReporting(models.Model):
         ('security', 'Security Guard'),
         ('others', 'Others'),
     ], string='Deapartment', related='name.designation')
+
+    in_time = fields.Float(string="Office In Time", digits=(12, 2), copy=False)
+    out_time = fields.Float(string="Office Out Time", digits=(12, 2), copy=False)
+    working_hour = fields.Float(compute="_value_pc", store=True)
+    report_date = fields.Date(string="Offer Start Date",default=lambda self: fields.Date.today())   
+    achievement = fields.Text(string='Achievement')
+    problems = fields.Text(string='Problems')
+    solutions = fields.Text(string='Solutions')
+
+    @api.depends('in_time','out_time')
+    def _value_pc(self):
+        # import pdb
+        # pdb.set_trace()
+        for record in self:
+            record.working_hour = float(record.out_time - record.in_time)
+
+    

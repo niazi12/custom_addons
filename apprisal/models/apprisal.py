@@ -1,5 +1,10 @@
 from odoo import models, fields, api
-
+AVAILABLE_PRIORITIES = [
+    ('0', 'Normal'),
+    ('1', 'Good'),
+    ('2', 'Very Good'),
+    ('3', 'Excellent')
+]
 
 class CreateApprisal(models.Model):
     _name = 'create.appraisal'
@@ -30,7 +35,16 @@ class CreateApprisal(models.Model):
         ('draft', 'Drafted'),
         ('confirm', 'Confirmed')
     ], string='Status', default='draft')
-
+    priority = fields.Selection(AVAILABLE_PRIORITIES, "Rank", default='0')
+    responsibiliy = fields.Text(string='Key Responsibilities')
+    employee_responsibiliy = fields.Text(string='Employee Responsibilities')
+    accomplishmnet = fields.Text(string='Major Accomplishment & Result')
+    manager_rating = fields.Selection([
+        ('a', 'Exceeded Expectations'),
+        ('b', 'Meet Expectations'),
+        ('c', 'Expected Results Not Achieved')
+    ], )
+    user_id =  fields.Many2one('res.users', string="User ID")
     def approve_appraisal(self):
         for record in self:        
             record.status = 'approve'
@@ -38,3 +52,23 @@ class CreateApprisal(models.Model):
     def reject_appraisal(self):
         for record in self:           
             record.status = 'reject'
+
+    stage_update = fields.Many2one('appraisal.status', string="Appraisal Status", group_expand='_read_group_stage_ids')
+
+
+
+    @api.model
+    def _read_group_stage_ids(self, stages, domain, order):
+        stage_ids = self.env['appraisal.status'].search([])
+        return stage_ids
+
+
+class ProductStatus(models.Model):
+    _name = "appraisal.status"
+    _description = "Appraisal Status"
+    _order = 'sequence'
+
+    name = fields.Char("Stage Name", required=True, translate=True)
+    sequence = fields.Integer(
+        "Sequence", default=10,
+        help="Gives the sequence order when displaying a list of stages.")

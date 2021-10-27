@@ -32,6 +32,9 @@
         'views/reporting_view.xml',
         'views/goals_view.xml',
         'views/meeting_view.xml',
+        'reports/print_report.xml',
+        'reports/report.xml',
+        'views/status_change.xml'
     ],
     # only loaded in demonstration mode
     'demo': [
