@@ -32,8 +32,6 @@ class CreateReporting(models.Model):
 
     @api.depends('in_time','out_time')
     def _value_pc(self):
-        # import pdb
-        # pdb.set_trace()
         for record in self:
             record.working_hour = float(record.out_time - record.in_time)
 

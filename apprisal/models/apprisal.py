@@ -55,7 +55,16 @@ class CreateApprisal(models.Model):
 
     stage_update = fields.Many2one('appraisal.status', string="Appraisal Status", group_expand='_read_group_stage_ids')
 
-
+    def book_meeting(self):
+        return{
+            'res_model': 'create.meetings',
+            'type': 'ir.actions.act_window',
+            'view_mode':'form',
+            'view_type': 'form',
+            'view_id' : self.env.ref('apprisal.create_meeting_view_form').id,
+            'target': 'new',
+            'context': {'default_apprisal':self.id,}
+        }
 
     @api.model
     def _read_group_stage_ids(self, stages, domain, order):

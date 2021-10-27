@@ -22,6 +22,7 @@
         <field name="arch" type="xml">
             <form>
                 <sheet>
+                    <button name="book_meeting" string="Create Meeting" type="object"  class="btn-primary"/>
                     <group>
                         <group string="Section I">
                             <field name="name"/> 

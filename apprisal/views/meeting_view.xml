@@ -116,4 +116,21 @@
         </field>
     </record>
 
+    <record id="meeting_view_graph" model="ir.ui.view">
+       <field name="name">create.meetings.graph</field>
+       <field name="model">create.meetings</field>   
+       <field name="arch" type="xml">       
+            <graph string="Meetings" type="bar" >   
+                <field name="name"/>
+                <field name="meeting_type"/>
+                <field name="meeting_date"/>
+                <field name="meeting_finish"/>
+                <field name="state"/> 
+
+            
+                
+            </graph>   
+        </field>
+    </record>
+
 </odoo>

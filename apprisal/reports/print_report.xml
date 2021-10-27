@@ -17,17 +17,20 @@
                                        
                                         <td width="60%">
                                             <table>
-                                                <tr>
+                                                
+                                               <tr>
                                                     <td>
                                                         <span>
-                                                            <strong>Name:</strong>
+                                                            <strong>Name::</strong>
                                                         </span>
                                                     </td>
-                                                    <td colspan="3" class="text-center">
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
                                                         <span t-field="o.name"/>
                                                     </td>
                                                 </tr>
-                                               
                                                 <tr>
                                                     <td>
                                                         <span>
@@ -54,6 +57,46 @@
                                                         <span t-field="o.designation"/>
                                                     </td>
                                                 </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Manager rating:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.manager_rating"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Key responsibiliy:</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.responsibiliy"/>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <span>
+                                                            <strong>Manager Feedback :</strong>
+                                                        </span>
+                                                    </td>
+                                                    <td>
+                                                        <span>:</span>
+                                                    </td>
+                                                    <td>
+                                                        <span t-field="o.manager_feedback"/>
+                                                    </td>
+                                                </tr>
+                                                
                                                 
                                             </table>
                                         </td>
