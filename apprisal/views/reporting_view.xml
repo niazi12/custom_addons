@@ -48,4 +48,44 @@
         </field>
     </record>
 
+    <record id="reporting_view_create_kanban" model="ir.ui.view">
+            <field name="name">create.report.kanban</field>
+            <field name="model">create.report</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/> 
+                    <field name="gender"/>
+                    <field name="employeeID"/> 
+                    <field name="designation"/>
+                    
+                    <templates>
+                        <t t-name="kanban-box">
+                            
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <h1 class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </h1>
+                                    <ul>
+                                        <li>Gender :
+                                            <field name="gender"/>
+                                        </li>
+                                        <li>Employee id :
+                                            <field name="employeeID"/>
+                                        </li>                                   
+                                        <li>Designation :
+                                            <field name="designation"/>
+                                        </li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+
 </odoo>
