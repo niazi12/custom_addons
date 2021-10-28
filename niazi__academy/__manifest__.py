@@ -31,7 +31,8 @@
         'views/student.xml',
         'views/admin.xml',
         'views/faculty.xml',
-        'views/front_view_website.xml'
+        'views/front_view_website.xml',
+        
        
         
       

@@ -3,7 +3,7 @@
         <field name="name">Employees</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">apprisal.employee</field>
-        <field name="view_mode">tree,form,search,kanban</field>
+        <field name="view_mode">kanban,tree,form,search</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create Employee List
@@ -11,16 +11,6 @@
         </field>
     </record>
 
-    <!-- <record id="employee_server" model="ir.actions.server">
-        <field name="name">Part time</field>
-        <field name="type">ir.actions.server</field>
-        <field name="model_id" ref="model_apprisal_employee"/>
-        <field name="binding_model_id" ref="model_apprisal_employee"/>
-        <field name="state">code</field>
-        <field name="code">approve_parttime()</field>
-        ggg
-    </record> -->
-   
 
     <menuitem name="Appraisal"
               id="menu_hr_appraisal_root"
@@ -90,7 +80,7 @@
         <field name="name">Goals</field>
         <field name="type">ir.actions.act_window</field>
         <field name="res_model">goals.appraisal</field>
-        <field name="view_mode">tree,form</field>
+        <field name="view_mode">kanban,tree,form</field>
         <field name="help" type="html">
             <p class="o_view_nocontent_smiling_face">
                 Create Goals

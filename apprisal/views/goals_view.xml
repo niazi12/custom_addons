@@ -39,6 +39,46 @@
         </field>
     </record>
 
+    <record id="goal_view_create_kanban" model="ir.ui.view">
+            <field name="name">goals.appraisal.kanban</field>
+            <field name="model">goals.appraisal</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/> 
+                    <field name="progression"/> 
+                    
+                    <field name="challanged_by"/> 
+                    <field name="deadline"/> 
+                    
+                    <templates>
+                        <t t-name="kanban-box">
+                            
+                            <div class="oe_kanban_global_click">
+                                <div class="oe_kanban_details">
+                                    <h1 class="o_kanban_record_title">
+                                        <field name="name"/>
+                                    </h1>
+                                    <ul>
+                                        <li>Progression :
+                                            <field name="progression"/>
+                                        </li>
+                                        <li>Challanged by :
+                                            <field name="challanged_by"/> 
+                                        </li>                                   
+                                        <li>Deadline :
+                                            <field name="deadline"/> 
+                                        </li>
+                                        
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
     
    
 

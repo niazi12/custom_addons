@@ -20,7 +20,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base'],
+    'depends': ['base','hr','website'],
 
     # always loaded
     'data': [
@@ -34,7 +34,8 @@
         'views/meeting_view.xml',
         'reports/print_report.xml',
         'reports/report.xml',
-        'views/status_change.xml'
+        'views/status_change.xml',
+        'views/website.xml'
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -7,7 +7,10 @@ import re
 class CreateEmployee(models.Model):
     _name = 'apprisal.employee'
     _description = 'Create employee'
-
+    _inherit = ['mail.thread', 'mail.activity.mixin']
+    _sql_constraints = [
+        ('check_age', 'CHECK(age <= 0)', 'The age must be strictly positive')        
+    ]
     def approve_parttime(self):       
         self.status = 'parttime'
 

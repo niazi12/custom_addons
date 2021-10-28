@@ -28,7 +28,7 @@
                             <field name="name"/> 
                             <field name="gender"/>
                             <field name="employeeID"/> 
-                            <field name="status"/>    
+                               
                             <field name="user_id"/>  
                             <field name="stage_update"/>                                                 
                         </group>   
