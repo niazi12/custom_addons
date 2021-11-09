@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="create_project_tree" model="ir.ui.view">
+        <field name="name">create.project.tree</field>
+        <field name="model">create.project</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="projectName"/> 
+              
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_project_view_form" model="ir.ui.view">
+        <field name="name">create.project.form</field>
+        <field name="model">create.project</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                    <group>
+                        <field name="projectName"/>                  
+                    </group> 
+                                      
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_action" model="ir.actions.act_window">
+        <field name="name">Custom Employee</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.project</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Project List
+            </p>
+        </field>
+    </record>
+
+
+    <menuitem name="Custom Employee"
+              id="menu_project_root"/>
+
+    <menuitem name="Project"
+              id="menu_project"
+              parent="menu_project_root"
+              action="project_action"/>
+
+    <record id="create_role_tree" model="ir.ui.view">
+        <field name="name">create.role.tree</field>
+        <field name="model">create.role</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="roleName"/> 
+              
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_role_view_form" model="ir.ui.view">
+        <field name="name">create.role.form</field>
+        <field name="model">create.role</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                    <group>
+                        <field name="roleName"/>                 
+                    </group> 
+                                      
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="role_action" model="ir.actions.act_window">
+        <field name="name">Role</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.role</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create role List
+            </p>
+        </field>
+    </record>
+
+
+    
+
+    <menuitem name="Role"
+              id="menu_prole"
+              parent="menu_project_root"
+              action="role_action"/>
+    
+    <record id="create_technology_tree" model="ir.ui.view">
+        <field name="name">employee.technology.tree</field>
+        <field name="model">employee.technology</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="technology_name"/> 
+                <field name="description"/>
+              
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_technology_view_form" model="ir.ui.view">
+        <field name="name">employee.technology.form</field>
+        <field name="model">employee.technology</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                    <group>
+                        <field name="technology_name"/> 
+                        <field name="description"/>                
+                    </group> 
+                                      
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="tech_action" model="ir.actions.act_window">
+        <field name="name">Technology</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.technology</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create role List
+            </p>
+        </field>
+    </record>
+
+
+    
+
+    <menuitem name="Technology"
+              id="menu_technology"
+              parent="menu_project_root"
+              action="tech_action"/>
+
+    <record id="create_process_tree" model="ir.ui.view">
+        <field name="name">create.process.tree</field>
+        <field name="model">create.process</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="processName"/> 
+              
+
+            </tree>
+        </field>
+    </record>
+
+    <record id="create_process_view_form" model="ir.ui.view">
+        <field name="name">create.process.form</field>
+        <field name="model">create.process</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    
+                    <group>
+                        <field name="processName"/> 
+                                      
+                    </group> 
+                                      
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="process_action" model="ir.actions.act_window">
+        <field name="name">Process</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">create.process</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create process List
+            </p>
+        </field>
+    </record>
+
+
+    
+
+    <menuitem name="Process"
+              id="menu_process"
+              parent="menu_project_root"
+              action="process_action"/>
+
+    <record id="create_em_tree" model="ir.ui.view">
+        <field name="name">create.employee.tree</field>
+        <field name="model">create.employee</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom">
+                <field name="projectName_id"/> 
+                <field name="roleName_id"/> 
+                <field name="responsibilty"/> 
+                <field name="technology_ids" widget="many2many_tags"/> 
+                <field name="process_ids" widget="many2many_tags"/> 
+                <field name="from_date"/> 
+                <field name="to_date"/> 
+                <field name="duation"/>
+                <field name="member"/>
+
+            </tree>
+        </field>
+    </record>
+
+    
+
+</odoo>
